@@ -1,0 +1,26 @@
+PROCEDURE dot_product (v1,v2: ARRAY OF INTEGER , VAR sum : INTEGER)
+VAR
+   i: INTEGER;
+BEGIN
+ sum:=0;
+    FOR i FROM 0 TO max v1.length-1 DO
+        sum:=sum+v1[i]*v2[i]
+    END_FOR
+END
+ 
+ALGORITHM dot_product
+VAR
+    v1,v2: ARRAY[5];
+    sum : INTEGER;
+BEGIN
+  REPEAT
+   Write ("Enter v1 and v2")
+  UNTIL (v1.length=v2.length)
+ dot_product(v1,v2,sum)
+    IF (sum=0) THEN
+    write "the vectors are orthogonal"
+      ELSE
+    write "the vectors are not orthogonal"
+    END_IF
+
+END
